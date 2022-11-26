@@ -10,5 +10,5 @@ submit_button = form.form_submit_button("Predict")
 
 if submit_button == True:
     response = requests.get(f"https://d4-deepdta.herokuapp.com/prediction?drug={drug}&target={target}")
-    result = json(response.text)
+    result = response.text
     st.write("Binding Affinity",result)
