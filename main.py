@@ -9,6 +9,6 @@ target = form.text_input("Enter target")
 submit_button = form.form_submit_button("Predict")
 
 if submit_button == True:
-    response = requests.get(f"https://d4-deepdta.herokuapp.com/prediction?drug={drug}&target={target}")
+    response = requests.get(f"https://deepdta.onrender.com/prediction?drug={drug}&target={target}")
     result = json.loads(response.text)
     st.write("Binding Affinity",result["Predicted affinity"])
